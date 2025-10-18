@@ -33,3 +33,19 @@ console.log(url.replace('%20', '-'))
 console.log(url.includes('sundar'))
 
 console.log(gameName.split('-'));
+
+
+// Concatenation
+const fname = 'My name is: '
+const lname = 'Vivek Kumar'
+console.log(fname + lname)
+
+console.log('Items (' + (1 + 1) + '): $' + (2095 + 799) / 100)
+
+// type II using ` ` and ${} this symbol
+console.log(`Items (${1 + 1}): $${(2095 + 799) / 100}`)
+
+console.log(`some          
+text`)                  // for multi-string
+
+alert(console.log(`Items (${1 + 1}): $${(2095 + 799) / 100}`))
