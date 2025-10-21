@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+    <script>
+        // What is an objects?
+        // An object group multiple value together.
+        // And let us use multiple values together
+
+    
+        const product = {
+            name: 'socks',
+            price: 1090
+        };
+
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        // update any property
+        product.name = 'cotton socks';
+        console.log(product);
+
+        // add new property in the object
+        product.newProperty = true;
+        console.log(product);
+
+        // delete property
+        delete product.newProperty;
+        console.log(product);
+
+        // another way to acces the value inside
+        // we can use when dot notation fails in some 
+        // cases like 'delivery-time' here '-' this symbol means substration in javascript.
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time': '1 day',
+
+            // nested objects
+            ratings: {
+                stars: 4.5,
+                count: 87
+            },
+            
+            // function inside object
+            fun: function function1() {                             // function inside object = method
+                console.log('Function inside object');              // object + function = method        i.e: Math.random
+            }
+
+        };
+
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']);       // we can use [] backets instead of . notation
+        console.log(product2['delivery-time']);
+
+        // access of nested property
+        console.log(product2.ratings.count);
+
+        // access of function in object
+        product2.fun();
+
+
+
+        // Built-in Objects
+        // JSON    --> JavaScript Object Notation
+        //     --> JSON doed not supports function.
+        //     --> all property and values are in double notation. That is used for universal language.
+
+
+        // convet javaScript object to JSON 
+        console.log(JSON.stringify(product2));
+
+        // convert JSON to javaScript object
+        const jsonString = JSON.stringify(product2);
+        console.log(JSON.parse(jsonString)); 
+
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        
+        const object1 = {
+            message: 'hello'
+        }
+
+        // reference of the first object
+        const object2 = object1;
+
+        object1.message = 'Good morning!';
+        console.log(object1);
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good Job!'
+        }
+
+        console.log(object3 === object1);
+        console.log(object2 === object1);
+
+        const object4 = {
+            message: 'Good Job!',
+            price: 799
+        }
+
+        // shortcut to take out the property from object
+        const { message, price } = object4;
+        console.log(message);
+        console.log(price);
+
+
+        // shorthand method 
+        const object5 = {
+            // messsage: message
+            message,
+            // method: function function1() {
+            //     console.log('method');
+            // }
+            method() {
+                console.log('method');
+            }
+        }
+
+        console.log(object5);
+        object5.method();
+
+
+
+    </script>
+</body>
+</html>
