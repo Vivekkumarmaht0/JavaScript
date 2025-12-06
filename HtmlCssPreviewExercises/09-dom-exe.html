@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercise</title>
+</head>
+<body>
+    <!-- first exe -->
+    <!-- <button>9a</button>
+    <button class="js-button">9b</button> -->
+
+    <!-- second exe -->
+    <button onclick="
+        document.querySelector('.js-choose').innerHTML = 'You chose: heads';
+    ">heads</button>
+
+    <button onclick="
+        document.querySelector('.js-choose').innerHTML = 'You chose: Tails';
+    ">tails</button>
+    <p class="js-choose"></p>
+
+    <!-- third exe -->
+    <input class="js-input" placeholder="Write Something" onkeydown="
+        if(event.key === 'Enter') {
+            pressEnterKey();
+        }
+    ">
+    <button onclick="
+        pressEnterKey();
+    ">Submit</button>
+    <p class="js-submit-btn"></p>
+
+    <!-- fourth exe -->
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+      handleCostKeydown(event);
+    ">
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <!-- fifth exe -->
+    <input placeholder="Write Something" onkeyup="
+        const inputElement1 = document.querySelector('.js-input-msg');
+        document.querySelector('.js-display').innerHTML = inputElement1.value;
+    " class="js-input-msg">
+    <p class="js-display"></p>
+
+    <script>
+        // console.log(document.querySelector('button'))
+
+        // document.querySelector('.js-button').innerHTML = '9b done';
+
+
+        function pressEnterKey() {
+            const inputElement = document.querySelector('.js-input');
+            document.querySelector('.js-submit-btn').innerHTML = `Your name is: ${inputElement.value}`;
+        }
+
+        function handleCostKeydown(event) {
+            if(event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value) * 100;
+
+            if (cost < 4000) {
+                cost = cost + 1000;
+            }
+
+            document.querySelector('.js-total-cost')
+            .innerHTML = `$${cost / 100}`;
+        }
+
+    </script>
+</body>
+</html>
