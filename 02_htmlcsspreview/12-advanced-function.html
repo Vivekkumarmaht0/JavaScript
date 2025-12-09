@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Function</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        function greeting() {
+            console.log('Hello');
+        }
+        greeting();
+
+        // functions are also a value so it can also store in the variables.
+        const number = 2;
+        const function1 = function greeting() {
+            console.log('Hello2');
+        };
+
+        console.log(function1);
+        console.log(typeof function1)
+        function1();
+
+        const object = {
+            num: 2,
+            fun: function greeting() {
+                console.log('Hello3');
+            }
+        }
+        object.fun();
+
+        // function inside function
+        // i.e callback function
+
+        function run(vivek) {
+            vivek();
+        }
+        run(function() {
+            console.log('Hello4');
+        });
+        */
+
+        // Some In-Build functions
+        setTimeout(function() {
+            console.log('timeout')
+        }, 3000);
+
+        setInterval(function() {
+            console.log('interval');
+        }, 3000);
+
+        console.log('next line 2');
+
+        ['Vivek', 'Badal', 'VivekBadal'].forEach(function(value, index) {
+            console.log(index);
+            console.log(value);
+        });
+    </script>
+</body>
+</html>
