@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+    <button class="js-changed-btn" onclick="
+        updateButton();
+    ">Start</button>
+
+    <button class="js-add-btn" onclick="
+        displayMessage();
+    ">Add to Cart</button>
+    <p class="js-msg"></p>
+
+    <button onclick="
+        Messages++;
+    ">Add</button>
+    <button onclick="
+        Messages--;
+    ">Remove</button>
+
+    <script>
+        function updateButton() {
+            const display = document.querySelector('.js-changed-btn');
+
+            display.innerHTML = 'Loading...';
+            setTimeout(function() {
+                display.innerHTML = 'Finished!';
+            }, 1000);
+        }
+
+        let timeOutId;
+        function displayMessage() {
+            const msg = document.querySelector('.js-msg');
+            msg.innerHTML = 'Added';
+
+            clearTimeout(timeOutId); 
+            timeOutId = setTimeout(function() {
+                msg.innerHTML = '';
+            }, 2000)
+        }
+
+        let Messages = 2;
+        setInterval(function() {
+            if(document.title === 'App' && Messages > 0) {
+                document.title = `${Messages} New Messages`;
+            } else {
+                document.title = 'App';
+            }
+        }, 1000);
+
+
+    </script>
+</body>
+</html>
