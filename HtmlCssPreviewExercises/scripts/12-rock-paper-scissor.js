@@ -33,6 +33,31 @@ function autoPlay() {
     
 }
 
+document.querySelector('.js-rock-button')
+  .addEventListener('click', function() {
+    playGame('rock');
+  });
+
+document.querySelector('.js-paper-button')
+  .addEventListener('click', function() {
+    playGame('paper');
+  });
+
+document.querySelector('.js-scissors-button')
+  .addEventListener('click', function() {
+    playGame('scissors');
+  });
+
+document.body.addEventListener('keydown', function(event) {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors');
+  }
+});
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
